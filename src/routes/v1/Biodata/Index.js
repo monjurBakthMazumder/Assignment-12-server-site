@@ -5,6 +5,6 @@ const findAll = require('../../../api/v1/BioData/controllers/findAll')
 const router = require('express').Router()
 
 router.get('/bioData', findAll)
-router.post('/bioData', bioData)
+router.put('/bioData/:id', bioData)
 
 module.exports = router
