@@ -8,10 +8,12 @@ const app = express()
 const port = process.env.PORT || 5000
 const authRoutes = require('./routes/v1/authentication');
 const BioDataRouter = require('./routes/v1/Biodata');
+const userRouter = require('./routes/v1/user');
 applyMiddleware(app);
 
 app.use(authRoutes)
 app.use(BioDataRouter)
+app.use(userRouter)
 app.get("/" , (req, res) => {
     res.send("server is running on port")
 })
