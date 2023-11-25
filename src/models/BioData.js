@@ -1,14 +1,14 @@
 const { model, Schema } = require("mongoose")
 
 const BioDataSchema = new Schema({
-    // "BioData_id": {
-    //     type: Number,
-    //     required: true,
-    // },
-    // "date": {
-    //     type: String,
-    //     required: true,
-    // },
+    "bioData_id": {
+        type: Number,
+        required: true,
+    },
+    "date": {
+        type: String,
+        required: true,
+    },
     "name": {
         type: String,
         required: true,
@@ -80,7 +80,11 @@ const BioDataSchema = new Schema({
     "expectedAge": {
         type: Number,
         required: true,
-    }
+    },
+    "premium": {
+        type: Boolean,
+        required: true,
+    },
 })
 
 const BioData = model("biodatas", BioDataSchema)

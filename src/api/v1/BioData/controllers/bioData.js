@@ -10,7 +10,24 @@ const bioData = async (req, res) => {
     });
     res.status(201).send(result);
   } else {
-    const result = await BioData.create(bioData);
+    const totalLength = await BioData.countDocuments();
+    const countId = totalLength + 1;
+    const currentDate = new Date();
+
+    const day = currentDate.getDate();
+    const month = currentDate.getMonth() + 1;
+    const year = currentDate.getFullYear();
+
+    console.log(`${year}-${month}-${day}`);
+    const date = `${year}-${month}-${day}`
+
+    const newData = {
+      ...bioData,
+      date: date,
+      bioData_id: countId,
+    };
+
+    const result = await BioData.create(newData);
     res.send(result);
   }
 };
