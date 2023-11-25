@@ -85,6 +85,10 @@ const BioDataSchema = new Schema({
         type: Boolean,
         required: true,
     },
+    "premiumRequest": {
+        type: Boolean,
+        required: true,
+    },
 })
 
 const BioData = model("biodatas", BioDataSchema)
