@@ -11,6 +11,7 @@ const BioDataRouter = require("./routes/v1/Biodata");
 const userRouter = require("./routes/v1/user");
 const favoritesRouter = require("./routes/v1/favorites");
 const PaymentRouter = require("./routes/v1/Payment");
+const CommonRouter = require("./routes/v1/Common");
 applyMiddleware(app);
 
 app.use(authRoutes);
@@ -18,6 +19,7 @@ app.use(BioDataRouter);
 app.use(userRouter);
 app.use(favoritesRouter);
 app.use(PaymentRouter);
+app.use(CommonRouter);
 app.get("/", (req, res) => {
   res.send("server is running on port");
 });
