@@ -17,8 +17,6 @@ const bioData = async (req, res) => {
     const day = currentDate.getDate();
     const month = currentDate.getMonth() + 1;
     const year = currentDate.getFullYear();
-
-    console.log(`${year}-${month}-${day}`);
     const date = `${year}-${month}-${day}`
 
     const newData = {
