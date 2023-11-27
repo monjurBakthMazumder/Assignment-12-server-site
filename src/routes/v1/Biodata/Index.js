@@ -7,18 +7,19 @@ const findBiodata = require('../../../api/v1/BioData/controllers/findBiodata')
 const premiumBioData = require('../../../api/v1/BioData/controllers/premiumBioData')
 const similarBiodata = require('../../../api/v1/BioData/controllers/similarBiodata')
 const singleBiodata = require('../../../api/v1/BioData/controllers/singleBiodata')
+const { verifyToken } = require('../../../middleware/auth')
 
 
 const router = require('express').Router()
 
-router.get('/all-bioData', findAll)
+router.get('/all-bioData',  findAll)
 router.get('/premium-bioData', premiumBioData)
-router.get('/single-bioData/:id', singleBiodata)
-router.get('/bioData/:email', findBiodata)
-router.get('/similar-bioData/:gender', similarBiodata)
-router.get('/bioData-premium-request', allBiodataRequest)
-router.put('/bioData', bioData)
-router.put('/bioData-premium-request/:id', biodataPremiumRequest)
-router.put('/bioData-premium-request-approved/:id', biodataPremiumRequestApproved)
+router.get('/single-bioData/:id', verifyToken, singleBiodata)
+router.get('/bioData/:email',verifyToken, findBiodata)
+router.get('/similar-bioData/:gender',verifyToken, similarBiodata)
+router.get('/bioData-premium-request', verifyToken, allBiodataRequest)
+router.put('/bioData', verifyToken, bioData)
+router.put('/bioData-premium-request/:id', verifyToken, biodataPremiumRequest)
+router.put('/bioData-premium-request-approved/:id',verifyToken, biodataPremiumRequestApproved)
 
 module.exports = router
