@@ -10,11 +10,11 @@ const SuccessStorySchema = new Schema({
     required: true,
   },
   "selfName": {
-    type: Number,
+    type: String,
     required: true,
   },
   "partnerName": {
-    type: Number,
+    type: String,
     required: true,
   },
   "coupleImg": {
