@@ -4,6 +4,7 @@ const biodataPremiumRequest = require('../../../api/v1/BioData/controllers/bioda
 const biodataPremiumRequestApproved = require('../../../api/v1/BioData/controllers/biodataPremiumRequestApproved')
 const findAll = require('../../../api/v1/BioData/controllers/findAll')
 const findBiodata = require('../../../api/v1/BioData/controllers/findBiodata')
+const premiumBioData = require('../../../api/v1/BioData/controllers/premiumBioData')
 const similarBiodata = require('../../../api/v1/BioData/controllers/similarBiodata')
 const singleBiodata = require('../../../api/v1/BioData/controllers/singleBiodata')
 
@@ -11,6 +12,7 @@ const singleBiodata = require('../../../api/v1/BioData/controllers/singleBiodata
 const router = require('express').Router()
 
 router.get('/all-bioData', findAll)
+router.get('/premium-bioData', premiumBioData)
 router.get('/single-bioData/:id', singleBiodata)
 router.get('/bioData/:email', findBiodata)
 router.get('/similar-bioData/:gender', similarBiodata)
