@@ -4,7 +4,7 @@ const SuccessStory = require("../../../models/SuccessStory");
 
 const allSuccessStory = async (req, res) => {
     try {
-        const result = await SuccessStory.find()
+        const result = await SuccessStory.find().sort({ marriageDate: 1 })
         res.send(result)
     } catch (error) {
         console.log(error.message);
