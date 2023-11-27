@@ -29,6 +29,10 @@ const SuccessStorySchema = new Schema({
     type: String,
     required: true,
   },
+  "marriageDate": {
+    type: String,
+    required: true,
+  },
   "date": {
     type: String,
     required: true,
