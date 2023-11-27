@@ -3,6 +3,7 @@ const globalErrorHandler = require("./utils/globalErrorHandler");
 const connectDB = require("./db/connectDB");
 const applyMiddleware = require("./middleware");
 
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;

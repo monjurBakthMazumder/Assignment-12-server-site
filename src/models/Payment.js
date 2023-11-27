@@ -5,6 +5,10 @@ const PaymentSchema = new Schema({
     type: String,
     required: true,
   },
+  "transactionId": {
+    type: String,
+    required: true,
+  },
   "bioId": {
     type: Number,
     required: true,
