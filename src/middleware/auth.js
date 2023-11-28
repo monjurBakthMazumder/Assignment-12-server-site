@@ -12,10 +12,11 @@ const verifyToken = async (req, res, next) => {
       console.log(err);
       return res.status(401).send({ message: "unauthorized access" });
     }
-    req.user = decoded;
+    req.decoded = decoded;
     next();
   });
 };
+
 const verifyAdmin = async (req, res, next) => {
   const email = req.user.email;
   const filter = { email: email };
