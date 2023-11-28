@@ -24,7 +24,7 @@ app.use(userRouter); // verified Token
 app.use(favoritesRouter);  // verified Token
 app.use(PaymentRouter);  // verified Token
 app.use(StatRouter); // verified Token
-app.use(SuccessStoryRouter);
+app.use(SuccessStoryRouter); // verified Token
 app.get("/", (req, res) => {
   res.send("server is running on port");
 });
