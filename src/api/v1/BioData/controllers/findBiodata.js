@@ -1,4 +1,4 @@
-const BioData = require("../../../../models/Biodata");
+const BioData = require("../../../../models/BioData");
 
 
 const findBiodata = async ( req, res) => {

@@ -1,6 +1,6 @@
-const BioData = require("../../../models/Biodata");
+const BioData = require("../../../models/BioData");
 const Payment = require("../../../models/Payment");
-const User = require("../../../models/user");
+const User = require("../../../models/User");
 
 const allData = async (req, res) => {
   try {

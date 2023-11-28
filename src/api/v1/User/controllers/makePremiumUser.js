@@ -1,4 +1,4 @@
-const User = require("../../../../models/user");
+const User = require("../../../../models/User");
 
 const makePremiumUser = async (req, res) => {
   const user = req.body;

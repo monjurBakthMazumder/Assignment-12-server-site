@@ -1,4 +1,5 @@
-const BioData = require("../../../models/Biodata");
+
+const BioData = require("../../../models/BioData");
 const SuccessStory = require("../../../models/SuccessStory");
 
 const stat = async (req, res) => {
