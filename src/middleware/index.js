@@ -8,6 +8,8 @@ const applyMiddleware = (app)=>{
         origin: [
             "http://localhost:5173",
             "http://localhost:5174",
+            "https://mingle-heart.web.app",
+            "https://mingle-heart.firebaseapp.com"
         ],
         credentials: true
     }));
