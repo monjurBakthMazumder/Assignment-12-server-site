@@ -5,6 +5,10 @@ const SuccessStorySchema = new Schema({
     type: Number,
     required: true,
   },
+  "selfGender": {
+    type: String,
+    required: true,
+  },
   "partnerBioId": {
     type: Number,
     required: true,
