@@ -16,6 +16,8 @@ const findAll = async (req, res) => {
       ? req.query?.presentDivision
       : undefined;
 
+  const page = Number(req.query?.page);
+  const size = Number(req.query?.size);
   if (ageTo && ageFrom) {
     filter.age = { $gte: ageFrom, $lte: ageTo };
   } else if (ageTo) {
@@ -37,7 +39,7 @@ const findAll = async (req, res) => {
   console.log("filter", filter);
   console.log("filterOption", req.query);
   try {
-    const allBioData = await BioData.find(filter);
+    const allBioData = await BioData.find(filter).skip(page * size).limit(size);
     res.send(allBioData);
   } catch (error) {
     console.log(error.message);

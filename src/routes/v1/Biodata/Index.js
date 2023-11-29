@@ -1,3 +1,4 @@
+const allBiodataCount = require('../../../api/v1/BioData/controllers/allBiodataCount')
 const allBiodataRequest = require('../../../api/v1/BioData/controllers/allBiodataRequest')
 const bioData = require('../../../api/v1/BioData/controllers/bioData')
 const biodataPremiumRequest = require('../../../api/v1/BioData/controllers/biodataPremiumRequest')
@@ -14,6 +15,7 @@ const { verifyToken, verifyAdmin } = require('../../../middleware/auth')
 const router = require('express').Router()
 
 router.get('/all-bioData',  findAll)
+router.get('/all-bioData-count',  allBiodataCount)
 router.get('/premium-bioData', premiumBioData)
 router.get('/single-bioData/:id', verifyToken, singleBiodata)
 router.get('/bioData/:email',verifyToken, findBiodata)
